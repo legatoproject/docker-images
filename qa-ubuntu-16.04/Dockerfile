@@ -31,8 +31,14 @@ RUN ( \
         apt-get --yes --assume-yes install ruby iputils-ping jq netcat sox libxml2-utils python-lxml \
                                            python-pip libglib2.0-dev xsltproc libtool curl \
                                            python-pytest python-pexpect && \
+## uLegato dependencies
+        apt-get --yes --assume-yes install libtool flex gperf bison && \
+## Platform-specific dependencies
+        apt-get --yes --assume-yes install \
+                                           python-pycparser python-crypto dos2unix p7zip-rar \
+                                           lzop libncurses5-dev libncursesw5-dev lcov && \
 ## Testbench dependencies
-        apt-get --yes --assume-yes install dnsmasq sudo && \
+        apt-get --yes --assume-yes install dnsmasq sudo iptables socat openssh-server && \
         apt-get clean \
     )
 
