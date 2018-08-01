@@ -38,7 +38,8 @@ RUN ( \
                                            python-pycparser python-crypto dos2unix p7zip-rar \
                                            lzop libncurses5-dev libncursesw5-dev lcov && \
 ## Testbench dependencies
-        apt-get --yes --assume-yes install dnsmasq sudo iptables socat openssh-server && \
+        apt-get --yes --assume-yes install dnsmasq sudo iptables socat openssh-server \
+                                           python3-serial && \
         apt-get clean \
     )
 
