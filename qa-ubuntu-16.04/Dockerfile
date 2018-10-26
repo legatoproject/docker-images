@@ -31,8 +31,10 @@ RUN ( \
         apt-get --yes --assume-yes install ruby iputils-ping jq netcat sox libxml2-utils python-lxml \
                                            python-pip libglib2.0-dev xsltproc libtool curl \
                                            python-pytest python-pexpect && \
-## uLegato dependencies
-        apt-get --yes --assume-yes install libtool flex gperf bison && \
+## uLegato dependencies (partial)
+        apt-get --yes --assume-yes install \
+                                           libtool flex gperf bison libncursesw5-dev \
+                                           libncurses5-dev && \
 ## Platform-specific dependencies
         apt-get --yes --assume-yes install \
                                            python-pycparser python-crypto dos2unix p7zip-rar \
@@ -40,13 +42,24 @@ RUN ( \
 ## Testbench dependencies
         apt-get --yes --assume-yes install dnsmasq sudo iptables socat openssh-server \
                                            python3-serial && \
+## Testbench usage
+        apt-get --yes --assume-yes install usbutils pciutils minicom net-tools && \
+## LeTP dependencies
+        apt-get --yes --assume-yes install telnet && \
+## Leaf dependencies
+        apt-get --yes --assume-yes install python3 python3-requests python3-argcomplete python3-all python3-setuptools \
+                                           python3-pip && \
         apt-get clean \
     )
 
 ## Install python dependencies
-RUN pip install --upgrade pip
-RUN pip install openpyxl
-RUN pip install tap.py
+RUN pip install --upgrade \
+                pip \
+                openpyxl \
+                tap.py \
+                six \
+                pytest-bdd \
+                requests
 
 ## UTF8 support
 RUN locale-gen en_US.UTF-8

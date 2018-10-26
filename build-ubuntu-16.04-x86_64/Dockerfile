@@ -29,7 +29,7 @@ RUN ( \
                                            linkchecker && \
 ## uLegato dependencies (partial)
         apt-get --yes --assume-yes install libtool flex gperf bison && \
-## Altair dependencies
+## Platform-specific dependencies
         apt-get --yes --assume-yes install libncurses5-dev libncursesw5-dev && \
         apt-get clean \
     )
