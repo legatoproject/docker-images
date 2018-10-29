@@ -43,7 +43,7 @@ RUN ( \
         apt-get --yes --assume-yes install dnsmasq sudo iptables socat openssh-server \
                                            python3-serial && \
 ## Testbench usage
-        apt-get --yes --assume-yes install usbutils pciutils minicom net-tools && \
+        apt-get --yes --assume-yes install usbutils pciutils minicom uucp net-tools sshfs && \
 ## LeTP dependencies
         apt-get --yes --assume-yes install telnet && \
 ## Leaf dependencies
