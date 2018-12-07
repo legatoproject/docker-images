@@ -32,7 +32,8 @@ RUN ( \
 ## QA dependencies
         apt-get --yes --assume-yes install ruby iputils-ping jq netcat sox libxml2-utils python-lxml \
                                            python-pip libglib2.0-dev xsltproc libtool curl \
-                                           python-pytest python-pexpect && \
+                                           python-pytest python-pexpect apt-transport-https lsb-release \
+                                           ckermit openssh-server && \
 ## uLegato dependencies (partial)
         apt-get --yes --assume-yes install \
                                            libtool flex gperf bison libncursesw5-dev \
