@@ -41,7 +41,7 @@ RUN ( \
 ## Platform-specific dependencies
         apt-get --yes --assume-yes install \
                                            python-pycparser python-crypto dos2unix p7zip-rar \
-                                           lzop libncurses5-dev libncursesw5-dev lcov && \
+                                           lzop libncurses5-dev libncursesw5-dev lcov libc6-dev-i386 && \
 ## Testbench dependencies
         apt-get --yes --assume-yes install dnsmasq sudo iptables socat openssh-server \
                                            python3-serial && \
