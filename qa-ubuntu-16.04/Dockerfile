@@ -47,6 +47,14 @@ RUN ( \
                                            python3-serial && \
 ## Testbench usage
         apt-get --yes --assume-yes install usbutils pciutils minicom uucp net-tools sshfs && \
+        ( curl -sL https://deb.nodesource.com/setup_8.x | bash - ) && \
+        ( curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - ) && \
+        echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+        apt-get update && \
+        apt-get --yes --assume-yes install yarn && \
+        git clone --depth 1 --branch sshkey https://github.com/swi-infra/wetty /root/wetty && \
+        cd /root/wetty && \
+        yarn && \
 ## LeTP dependencies
         apt-get --yes --assume-yes install telnet && \
 ## Leaf dependencies
