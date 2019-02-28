@@ -57,6 +57,13 @@ RUN ( \
 ## Leaf dependencies
         apt-get --yes --assume-yes install python3 python3-requests python3-argcomplete python3-all python3-setuptools \
                                            python3-pip && \
+## Atlas (& qemu) dependencies
+        apt-get --yes --assume-yes install vim expect-dev curl build-essential zlib1g-dev libglib2.0-dev libpixman-1-dev git \
+                                           libcap-ng-dev libncurses5-dev libcurl4-openssl-dev libusb-dev \
+                                           tcsh xsltproc g++ ddd dos2unix mono-runtime gawk gtk+-2.0 \
+                                           libpcsclite-dev libpcap-dev uuid-dev apt-file \
+                                           libjpeg-progs libjpeg8-dev libjpeg8 libxml2-dev flex bison \
+                                           python3.5-dev && \
         apt-get clean \
     )
 
