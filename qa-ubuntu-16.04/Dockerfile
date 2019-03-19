@@ -64,6 +64,8 @@ RUN ( \
                                            libpcsclite-dev libpcap-dev uuid-dev apt-file \
                                            libjpeg-progs libjpeg8-dev libjpeg8 libxml2-dev flex bison \
                                            python3.5-dev && \
+## Virtual framebuffer (Xvfb) X server
+        apt-get --yes --assume-yes install xvfb && \
         apt-get clean \
     )
 
